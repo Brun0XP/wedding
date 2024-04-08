@@ -28,21 +28,11 @@
 
     <div class="col-12 md:col-5 flex-order-0 md:flex-order-1 mb-6 md:mb-0 border-round">
       <img :src="`images/placeholder.svg`" class="w-full border-round shadow-2 animation-duration-1000 fadeinright" />
-      <!-- <img :src="`demo/images/landing/${darkMode ? 'dashboard-dark' : 'dashboard-light'}.png`" alt="" class="w-full h-full border-round shadow-2 animation-duration-1000 fadeinright" /> -->
     </div>
   </div>
 </template>
 
-<script lang="ts" setup>
-import { computed } from 'vue';
-
-import { useLayout } from '@/layout/composables/layout';
-const { layoutConfig } = useLayout();
-
-const darkMode = computed(() => {
-  return layoutConfig.colorScheme.value !== 'light';
-});
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 .dancing-script-title {
