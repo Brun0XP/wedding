@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 $gutter: 1rem; //for primeflex grid system
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 @import '@/assets/layout/layout.scss';
 
 /* PrimeVue */
@@ -10,5 +12,3 @@ $gutter: 1rem; //for primeflex grid system
 
 /* Demos */
 @import '@/assets/demo/Demos.scss';
-
-
