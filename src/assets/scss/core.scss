@@ -1,0 +1,22 @@
+@import 'primevue/resources/themes/aura-light-green/theme.css';
+@import 'primeflex/primeflex.css';
+@import 'primeicons/primeicons.css';
+
+:root {
+  --rose-quartz: #f7cac9;
+  --blush: #ffc0cb;
+  --dusty-rose: #dcae96;
+  --mauve: #e0b0ff;
+  --peach: #ffdab9;
+  --champagne: #f7e7ce;
+  --silver: #c0c0c0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--rose-quartz);
+}

@@ -1,15 +1,25 @@
-import { fileURLToPath, URL } from 'node:url';
-
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import VueDevtools from 'vite-plugin-vue-devtools'
+import VueDevtools from 'vite-plugin-vue-devtools';
+
+import * as path from 'path';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default ({ mode }: { mode: string }) => {
+  const env = loadEnv(mode, process.cwd(), '');
+
+  return defineConfig({
+    define: {
+      'process.env': env
+    },
+    server: {
+      port: 8080
+    },
     plugins: [vue(), VueDevtools()],
     resolve: {
-        alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url))
-        }
+      alias: {
+        '@': path.resolve(__dirname, 'src')
+      }
     }
-});
+  });
+};
