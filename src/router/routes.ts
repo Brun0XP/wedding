@@ -3,34 +3,17 @@ import { RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
+    component: () => import('@/layouts/app/AppLayout.vue'),
     children: [
       {
         path: '/',
         name: 'Landing',
-        component: () => import('@/views/Landing.vue')
-      }
-    ]
-  },
-  {
-    path: '/auth',
-    children: [
+        component: () => import('@/views/LandingView.vue')
+      },
       {
-        path: '/auth/login',
-        name: 'Login',
-        component: () => import('@/views/auth/LoginView.vue')
-      }
-    ]
-  },
-  {
-    path: '/admin',
-    meta: {
-      requiresAuth: true
-    },
-    children: [
-      {
-        path: '/admin',
-        name: 'Dashboard',
-        component: () => import('@/views/admin/DashboardView.vue')
+        path: '/lista-presentes',
+        name: 'GiftList',
+        component: () => import('@/views/GiftListView.vue')
       }
     ]
   }
