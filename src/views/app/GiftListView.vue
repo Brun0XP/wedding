@@ -1,9 +1,15 @@
 <template>
   <ContentSection variant="secondary" title="Lista de presentes">
-    <div class="mx-auto">
-      <!-- <pre>{{ gifts }}</pre> -->
+    <div class="gift-header">
+      <Button
+        class="gift-button"
+        icon="pi pi-shopping-cart"
+        rounded
+        label="Carrinho vazio"
+        disabled
+      ></Button>
     </div>
-    <div class="gift-list grid">
+    <div class="gift-list grid mt-3">
       <div v-for="gift in gifts" class="col-12 sm:col-6 md:col-4">
         <div class="card">
           <img class="card-image" :src="gift.image" />
@@ -13,22 +19,12 @@
           <div class="content">
             {{ formatCurrency(gift.price) }}
           </div>
-          <Button class="gift-button" label="Presentear" rounded></Button>
+          <Button
+            class="gift-button w-full"
+            label="Presentear"
+            rounded
+          ></Button>
         </div>
-        <!-- <Card class="gift-card">
-          <template #header>
-            <div class="p-3 flex justify-content-center">
-              <img class="mx-auto" alt="user header" :src="gift.image" />
-            </div>
-          </template>
-          <template #title>
-            <h5 class="text-lg font-normal text-center">{{ gift.name }}</h5>
-          </template>
-          <template #content>
-            <div>a</div>
-            <Button label="Presentear" rounded class="w-full mt-auto" />
-          </template>
-        </Card> -->
       </div>
     </div>
   </ContentSection>
@@ -50,6 +46,15 @@ onMounted(async () => {
 </script>
 
 <style soped lang="scss">
+.gift-header {
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .gift-list {
   max-width: 940px;
   width: 100%;
@@ -79,11 +84,11 @@ onMounted(async () => {
       margin-bottom: 1rem;
       font-size: 1.25rem;
     }
-    .gift-button {
-      width: 100%;
-      background-color: #e4afaf;
-      border: 1px solid #e4afaf;
-    }
   }
+}
+
+.gift-button {
+  background-color: #e4afaf;
+  border: 1px solid #e4afaf;
 }
 </style>

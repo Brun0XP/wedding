@@ -8,12 +8,23 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/',
         name: 'Landing',
-        component: () => import('@/views/LandingView.vue')
+        component: () => import('@/views/app/LandingView.vue')
       },
       {
         path: '/lista-presentes',
         name: 'GiftList',
-        component: () => import('@/views/GiftListView.vue')
+        component: () => import('@/views/app/GiftListView.vue')
+      }
+    ]
+  },
+  {
+    path: '/admin',
+    component: () => import('@/layouts/admin/AdminLayout.vue'),
+    children: [
+      {
+        path: '/admin/lista-presentes',
+        name: 'AdminGiftList',
+        component: () => import('@/views/admin/GiftListView.vue')
       }
     ]
   }

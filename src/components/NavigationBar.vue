@@ -1,8 +1,10 @@
 <template>
-  <nav class="flex align-items-center px-4 h-4rem bg-white">
+  <nav class="flex align-items-center px-4 h-4rem bg-white shadow-5">
     <ul class="hidden md:flex list-none p-0 m-0 gap-1">
       <li v-for="link in links">
-        <Button class="link-button" :label="link.label" rounded text></Button>
+        <RouterLink :to="link.to || '/'">
+          <Button class="link-button" :label="link.label" rounded text></Button>
+        </RouterLink>
       </li>
     </ul>
     <RouterLink class="ml-auto" to="/lista-presentes">
@@ -20,7 +22,8 @@
 const links = [
   {
     label: 'Home',
-    sectionId: 'home'
+    sectionId: 'home',
+    to: '/'
   },
   {
     label: 'O casal',

@@ -7,12 +7,23 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Avatar: typeof import('primevue/avatar')['default']
     Button: typeof import('primevue/button')['default']
+    Card: typeof import('primevue/card')['default']
+    Column: typeof import('primevue/column')['default']
     ContentSection: typeof import('./src/components/ContentSection.vue')['default']
+    DataTable: typeof import('primevue/datatable')['default']
+    GiftListForm: typeof import('./src/components/gift-list/GiftListForm.vue')['default']
     HeaderSection: typeof import('./src/components/HeaderSection.vue')['default']
+    IconField: typeof import('primevue/iconfield')['default']
+    InputIcon: typeof import('primevue/inputicon')['default']
+    InputText: typeof import('primevue/inputtext')['default']
     LiveCountdown: typeof import('./src/components/LiveCountdown.vue')['default']
     NavigationBar: typeof import('./src/components/NavigationBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Sidebar: typeof import('primevue/sidebar')['default']
+    SplitButton: typeof import('primevue/splitbutton')['default']
+    Toolbar: typeof import('primevue/toolbar')['default']
   }
 }

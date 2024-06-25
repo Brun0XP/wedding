@@ -131,16 +131,9 @@ defineProps<Props>();
         line-height: 26px;
       }
       .web-info {
-        // font-weight: bold;
-        // font-size: 14px;
-        // line-height: 18px;
         i {
           color: #ffc3c9;
         }
-        // position: relative;
-        // display: inline-flex;
-        // justify-content: center;
-        // align-items: center;
       }
     }
   }

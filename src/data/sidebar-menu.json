@@ -1,0 +1,7 @@
+[
+  {
+    "icon": "pi pi-gift",
+    "label": "Lista de presentes",
+    "to": "/admin/lista-presentes"
+  }
+]

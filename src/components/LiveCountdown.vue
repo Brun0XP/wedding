@@ -89,12 +89,12 @@ const explode = async () => {
 .countdown {
   margin: 0 auto;
   display: flex;
-  column-gap: 1rem;
+  column-gap: 0.5rem;
   &-item {
     background-color: #d4a1a1;
-    width: 100px;
-    height: 100px;
-    border-radius: 16px;
+    width: 76px;
+    height: 76px;
+    border-radius: 12px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -102,11 +102,27 @@ const explode = async () => {
     align-items: center;
     font-weight: bold;
     .value {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
     .label {
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .countdown {
+    &-item {
+      width: 100px;
+      height: 100px;
+      border-radius: 14px;
+      .value {
+        font-size: 2rem;
+      }
+      .label {
+        font-size: 0.9rem;
+      }
     }
   }
 }
