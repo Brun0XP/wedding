@@ -4,7 +4,7 @@ export default function useFormatter() {
     locale = 'pt-BR',
     currency = 'BRL'
   ) => {
-    if (!value) {
+    if (value == null) {
       return '';
     }
 

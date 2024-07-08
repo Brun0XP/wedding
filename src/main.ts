@@ -1,17 +1,21 @@
-import { createApp } from 'vue';
-import App from '@/App.vue';
-import router from '@/router';
-import PrimeVue from 'primevue/config';
-import Ripple from 'primevue/ripple';
-import StyleClass from 'primevue/styleclass';
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 
-import '@/assets/scss/core.scss';
+import App from '@/App.vue'
+import router from '@/router'
+import PrimeVue from 'primevue/config'
+import Ripple from 'primevue/ripple'
+import StyleClass from 'primevue/styleclass'
 
-const app = createApp(App);
+import '@/assets/scss/core.scss'
 
-app.use(router);
-app.use(PrimeVue, { ripple: true });
-app.directive('ripple', Ripple);
-app.directive('styleclass', StyleClass);
+const app = createApp(App)
+const pinia = createPinia()
 
-app.mount('#app');
+app.use(pinia)
+app.use(router)
+app.use(PrimeVue, { ripple: true })
+app.directive('ripple', Ripple)
+app.directive('styleclass', StyleClass)
+
+app.mount('#app')
