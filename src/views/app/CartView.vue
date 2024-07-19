@@ -36,7 +36,7 @@
                     ></Button>
                   </div>
                 </div>
-                <div class="flex items-center">
+                <div class="flex items-center sm:items-start">
                   <div class="flex-grow block sm:hidden">
                     <Button
                       icon="pi pi-trash"
