@@ -15,7 +15,7 @@ export default ({ mode }: { mode: string }) => {
       'process.env': env
     },
     server: {
-      port: 8080
+      port: 3000
     },
     plugins: [
       vue(),

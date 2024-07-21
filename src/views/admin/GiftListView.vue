@@ -36,32 +36,6 @@
       </DataTable>
     </template>
   </Card>
-
-  <!-- <Sidebar v-model:visible="formVisible" position="right" class="sidebar-form">
-    <template #container="{ closeCallback }">
-      <div class="header">
-        <h2 class="m-0">Editar presente</h2>
-        <Button icon="pi pi-times" severity="secondary" @click="closeCallback"></Button>
-      </div>
-      <div v-if="selectedGift" class="content">
-        <div class="relative">
-          <img :src="selectedGift.image" alt="" />
-          <Button class="button-edit absolute top-0 right-0" icon="pi pi-pencil"></Button>
-        </div>
-        <div class="flex flex-column gap-2 w-full">
-          <label for="name">Nome:</label>
-          <InputText id="name" v-model="selectedGift.name" />
-        </div>
-        <div class="flex flex-column gap-2 w-full">
-          <label for="name">Valor total:</label>
-          <InputText id="name" v-model="selectedGift.price" />
-        </div>
-      </div>
-      <div class="footer">
-        <Button class="button-save" rounded label="Salvar alterações"></Button>
-      </div>
-    </template>
-  </Sidebar> -->
 </template>
 
 <script lang="ts" setup>

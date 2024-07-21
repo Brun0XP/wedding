@@ -22,7 +22,7 @@
               <div
                 class="aspect-square w-[12rem] mx-auto"
                 :style="{
-                  backgroundImage: `url(${item.image})`,
+                  backgroundImage: `url(${item.image ? item.image : 'imgs/placeholder.svg'})`,
                   backgroundSize: 'contain',
                   backgroundRepeat: 'no-repeat',
                   backgroundPosition: 'center'

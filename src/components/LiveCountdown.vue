@@ -41,7 +41,6 @@ const countdown = ref({
   seconds: 0
 })
 const eventDate = new Date('Decembre 21, 2024 16:00:00').getTime()
-// const eventDate = new Date('June 05, 2024 19:22:20').getTime();
 const intervalId = ref()
 const explodeVisible = ref(false)
 

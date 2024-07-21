@@ -10,7 +10,7 @@
     <div
       class="aspect-square w-[12rem] mx-auto"
       :style="{
-        backgroundImage: `url(${lastItem.image})`,
+        backgroundImage: `url(${lastItem.image ? lastItem.image : 'imgs/placeholder.svg'})`,
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center'
@@ -32,7 +32,6 @@
         <RouterLink to="/carrinho">
           <Button icon="pi pi-shopping-cart" class="w-full" label="Visualizar carrinho"></Button>
         </RouterLink>
-        <!-- <Button icon="pi pi-heart" outlined></Button> -->
       </div>
     </div>
   </Dialog>
