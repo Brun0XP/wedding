@@ -1,7 +1,8 @@
 <template>
   <HeaderSection />
   <LiveCountdown />
-  <ContentSection variant="primary">
+  <ContentSection variant="primary" title="NOVAS INFORMAÇÕES EM BREVE!" />
+  <!-- <ContentSection variant="primary">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt rutrum erat ut placerat. In in vestibulum
       augue, at lacinia mi. Curabitur magna eros, venenatis eu orci ac, tempor commodo odio. Nam sed justo pellentesque,
@@ -20,10 +21,10 @@
       urna at lacus. Vestibulum blandit rutrum ligula a ullamcorper. Sed vitae libero consequat, fringilla nisl sed,
       laoreet arcu.
     </p>
-  </ContentSection>
-  <ContentSection variant="secondary" title="O casal" />
+  </ContentSection> -->
+  <!-- <ContentSection variant="secondary" title="O casal" />
   <ContentSection variant="primary" title="Cerimônia" />
-  <ContentSection variant="secondary" title="Recepção" />
+  <ContentSection variant="secondary" title="Recepção" /> -->
 </template>
 
 <script lang="ts" setup>

@@ -70,7 +70,13 @@
             </div>
           </div>
           <div class="w-full flex justify-end mt-3">
-            <Button class="w-full sm:w-auto" label="Realizar pagamento" @click="createCheckout"></Button>
+            <Button
+              :icon="loading ? 'pi pi-spin pi-spinner' : 'pi pi-credit-card'"
+              class="w-full sm:w-auto"
+              label="Realizar pagamento"
+              @click="createCheckout"
+              :disabled="loading"
+            ></Button>
           </div>
         </template>
       </DataView>
@@ -79,6 +85,7 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { useFormatter, useMercadopago, useFetch } from '@/composables'
 import { useCartStore } from '@/stores/cart'
 import { storeToRefs } from 'pinia'
@@ -89,12 +96,15 @@ const { formatCurrency } = useFormatter()
 const { items, totalPrice } = storeToRefs(useCartStore())
 const { removeItem } = useCartStore()
 const { openCheckout } = useMercadopago()
+const loading = ref(false)
 
 const createCheckout = () => {
+  loading.value = true
   useFetch('checkout/create')
     .post({ products_id: items.value.map((item) => item.id) })
     .json()
     .then(({ data }) => {
+      loading.value = false
       openCheckout(data.value.mercadopago_preference_id)
     })
 }

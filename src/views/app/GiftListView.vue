@@ -1,5 +1,5 @@
 <template>
-  <ContentSection variant="secondary" title="Lista de presentes">
+  <ContentSection variant="secondary" title="Lista de presentes (novos itens serão adicionados)">
     <DataView :value="gifts" layout="grid" data-key="gifts">
       <template #header>
         <div class="flex justify-end">
@@ -16,7 +16,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           <template v-for="item in slotProps.items">
             <div
-              v-if="!isInCart(item.id)"
+              v-if="!isInCart(item.id) && item.price"
               class="p-6 border border-surface-200 bg-surface-0 rounded-xl flex flex-col h-full"
             >
               <div
