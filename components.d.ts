@@ -15,6 +15,7 @@ declare module 'vue' {
     DataTable: typeof import('primevue/datatable')['default']
     DataView: typeof import('primevue/dataview')['default']
     Dialog: typeof import('primevue/dialog')['default']
+    Galleria: typeof import('primevue/galleria')['default']
     HeaderSection: typeof import('./src/components/HeaderSection.vue')['default']
     IconField: typeof import('primevue/iconfield')['default']
     InputIcon: typeof import('primevue/inputicon')['default']

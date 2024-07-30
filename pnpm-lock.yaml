@@ -24,8 +24,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0
       primevue:
-        specifier: ^4.0.0
-        version: 4.0.0(@primeuix/utils@0.0.5)(vue@3.4.27(typescript@5.4.5))
+        specifier: ^4.0.2
+        version: 4.0.2(vue@3.4.27(typescript@5.4.5))
       tailwindcss-primeui:
         specifier: ^0.3.4
         version: 0.3.4(tailwindcss@3.4.6)
@@ -447,15 +447,14 @@ packages:
     resolution: {integrity: sha512-3bCZzZuM5kiKl7qO5+Q7BuP6xslc9yPfRiUL4k+mLrR2mwUI0rWFLQR4LyhMUVyHJ5izbVoS7kinppGgOuCrMA==}
     engines: {node: '>=12.11.0'}
 
-  '@primevue/core@4.0.0':
-    resolution: {integrity: sha512-M+GF1HYnl/x5J6uevXh1k42J0XnFhp0XHce+cHddWg7v3bVwgsn7LD3AKKcf0A/iQQPXVKX9nY/4/9eFVct67w==}
+  '@primevue/core@4.0.2':
+    resolution: {integrity: sha512-SpCIQ1LG6B66cecmZt1UdFeY7tbdJrgnhncADolfE9fcCyTSBtbaVLLhCV2E4Q9myMwCFE5KQxqazA4rdLWk4w==}
     engines: {node: '>=12.11.0'}
     peerDependencies:
-      '@primeuix/utils': ^0.0.5
       vue: ^3.0.0
 
-  '@primevue/icons@4.0.0':
-    resolution: {integrity: sha512-gv9pbj7JjCuW59tW2csIJgg6btTJpkr/mjlfqscEIrYzDGqzCrbfxLur48gA2dyhYsiQPPTbIHFwL944piFgIg==}
+  '@primevue/icons@4.0.2':
+    resolution: {integrity: sha512-S1VEpMsx4uUAsTjZtII03LQqgocYwSKbXMF0YDFWybY8r5LaHaveVZxS/i+KbsCLaL18BXJw0L/7L1eQdJHzaA==}
     engines: {node: '>=12.11.0'}
 
   '@primevue/metadata@4.0.0':
@@ -1250,8 +1249,8 @@ packages:
   primeicons@7.0.0:
     resolution: {integrity: sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw==}
 
-  primevue@4.0.0:
-    resolution: {integrity: sha512-2PFmmJqyXpOcKOdF+gbps5fpSXfoXZp2LwX+hya/b5SDseMt3UNboyEgVI6B+DNbJRrib35EbDiMw+7RIANQ1w==}
+  primevue@4.0.2:
+    resolution: {integrity: sha512-bf5In//ixosZDOcfJ0iaBXhtQSpNC/CuAOE2KHd/SgUKZdij3VRljQ+I9+Be/TTxfikIeKH7eZ4gzDbWiIZurw==}
     engines: {node: '>=12.11.0'}
 
   queue-microtask@1.2.3:
@@ -1916,17 +1915,17 @@ snapshots:
     dependencies:
       '@primevue/metadata': 4.0.0
 
-  '@primevue/core@4.0.0(@primeuix/utils@0.0.5)(vue@3.4.27(typescript@5.4.5))':
+  '@primevue/core@4.0.2(vue@3.4.27(typescript@5.4.5))':
     dependencies:
       '@primeuix/styled': 0.0.5
       '@primeuix/utils': 0.0.5
       vue: 3.4.27(typescript@5.4.5)
 
-  '@primevue/icons@4.0.0(@primeuix/utils@0.0.5)(vue@3.4.27(typescript@5.4.5))':
+  '@primevue/icons@4.0.2(vue@3.4.27(typescript@5.4.5))':
     dependencies:
-      '@primevue/core': 4.0.0(@primeuix/utils@0.0.5)(vue@3.4.27(typescript@5.4.5))
+      '@primeuix/utils': 0.0.5
+      '@primevue/core': 4.0.2(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
-      - '@primeuix/utils'
       - vue
 
   '@primevue/metadata@4.0.0': {}
@@ -2701,12 +2700,13 @@ snapshots:
 
   primeicons@7.0.0: {}
 
-  primevue@4.0.0(@primeuix/utils@0.0.5)(vue@3.4.27(typescript@5.4.5)):
+  primevue@4.0.2(vue@3.4.27(typescript@5.4.5)):
     dependencies:
-      '@primevue/core': 4.0.0(@primeuix/utils@0.0.5)(vue@3.4.27(typescript@5.4.5))
-      '@primevue/icons': 4.0.0(@primeuix/utils@0.0.5)(vue@3.4.27(typescript@5.4.5))
+      '@primeuix/styled': 0.0.5
+      '@primeuix/utils': 0.0.5
+      '@primevue/core': 4.0.2(vue@3.4.27(typescript@5.4.5))
+      '@primevue/icons': 4.0.2(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
-      - '@primeuix/utils'
       - vue
 
   queue-microtask@1.2.3: {}
