@@ -1,5 +1,5 @@
 <template>
-  <ContentSection variant="secondary" title="Lista de presentes (novos itens serão adicionados)">
+  <ContentSection variant="secondary" title="Lista de presentes">
     <DataView :value="gifts" layout="grid" data-key="gifts">
       <template #header>
         <div class="flex justify-end">
@@ -90,6 +90,7 @@ import AddedCartModal from '@/components/modal/AddedCartModal.vue'
 const { formatCurrency } = useFormatter()
 const { cartItemCount } = storeToRefs(useCartStore())
 const { addItem, isInCart } = useCartStore()
+
 const modalAddedCartVisible = ref(false)
 
 const gifts = ref()
