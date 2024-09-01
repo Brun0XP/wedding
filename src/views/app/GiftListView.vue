@@ -79,14 +79,14 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
-import { useSupabase, useFormatter } from '@/composables'
+import { useFormatter } from '@/composables'
 import { useCartStore } from '@/stores/cart'
 import { storeToRefs } from 'pinia'
+import axios from '@/plugins/axios'
 
 import ContentSection from '@/components/ContentSection.vue'
 import AddedCartModal from '@/components/modal/AddedCartModal.vue'
 
-const { supabase } = useSupabase()
 const { formatCurrency } = useFormatter()
 const { cartItemCount } = storeToRefs(useCartStore())
 const { addItem, isInCart } = useCartStore()
@@ -94,8 +94,9 @@ const modalAddedCartVisible = ref(false)
 
 const gifts = ref()
 onMounted(async () => {
-  const { data } = await supabase.from('products').select('id, name, description, price, image, categories(id, name)')
-  gifts.value = data
+  axios.get('/product').then((response) => {
+    gifts.value = response.data
+  })
 })
 
 const addToCart = (gift: any) => {

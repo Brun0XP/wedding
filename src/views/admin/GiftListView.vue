@@ -40,9 +40,8 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
-import { useSupabase, useFormatter } from '@/composables'
+import { useFormatter } from '@/composables'
 
-const { supabase } = useSupabase()
 const { formatCurrency } = useFormatter()
 
 const gifts = ref()
@@ -57,9 +56,7 @@ interface Gift {
 }
 const selectedGift = ref<Gift | null>(null)
 
-onMounted(async () => {
-  gifts.value = (await supabase.from('gifts').select('*')).data
-})
+onMounted(async () => {})
 
 const selectGift = (gift: Gift) => {
   selectedGift.value = gift
