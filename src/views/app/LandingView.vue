@@ -133,7 +133,6 @@ const images = ref([
     alt: 'Ensaio 9'
   }
 ])
-const activeIndex = ref(0)
 const responsiveOptions = ref([
   {
     breakpoint: '1024px',
@@ -148,12 +147,6 @@ const responsiveOptions = ref([
     numVisible: 1
   }
 ])
-const displayCustom = ref(false)
-
-const imageClick = (index: number) => {
-  activeIndex.value = index
-  displayCustom.value = true
-}
 </script>
 
 <style soped lang="scss"></style>

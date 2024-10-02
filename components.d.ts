@@ -12,7 +12,6 @@ declare module 'vue' {
     Card: typeof import('primevue/card')['default']
     Column: typeof import('primevue/column')['default']
     ContentSection: typeof import('./src/components/ContentSection.vue')['default']
-    copy: typeof import('./src/components/modal/AddedCartModal copy.vue')['default']
     DataTable: typeof import('primevue/datatable')['default']
     DataView: typeof import('primevue/dataview')['default']
     Dialog: typeof import('primevue/dialog')['default']
