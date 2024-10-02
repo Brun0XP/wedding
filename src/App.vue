@@ -1,30 +1,44 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <Galleria :value="images" :responsiveOptions="responsiveOptions" :numVisible="5" :circular="true" containerStyle="max-width: 640px"
+    :showItemNavigators="true" :showThumbnails="false" :showItemNavigatorsOnHover="true" :showIndicators="true">
+    <template #item="slotProps">
+        <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="width: 100%; display: block;" />
+    </template>
+    <template #thumbnail="slotProps">
+            <img :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" style="display: block;" />
+    </template>
+  </Galleria>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+
+onMounted(() => {
+    images.value = [{
+      itemImageSrc: '/imgs/photo_01.jpg',
+      thumbnailImageSrc: '/imgs/photo_01.jpg',
+      alt: 'img'
+    },{
+      itemImageSrc: '/imgs/photo_02.jpg',
+      thumbnailImageSrc: '/imgs/photo_02.jpg',
+      alt: 'img2'
+    }]
+});
+
+const images = ref();
+const responsiveOptions = ref([
+    {
+        breakpoint: '991px',
+        numVisible: 4
+    },
+    {
+        breakpoint: '767px',
+        numVisible: 3
+    },
+    {
+        breakpoint: '575px',
+        numVisible: 1
+    }
+]);
+</script>
