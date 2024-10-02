@@ -34,15 +34,12 @@
             <template #item="slotProps">
                 <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="width: 100%; display: block;" />
             </template>
-            <template #thumbnail="slotProps">
-                <img :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" style="display: block;" />
-            </template>
+            
         </Galleria>
 
         <!-- <div v-if="images" class="grid grid-cols-12 gap-4" style="max-width: 400px">
           <div v-for="(image, index) of images" :key="index" class="col-span-6 sm:col-span-4">
             <img :src="image.thumbnailImageSrc" :alt="image.alt" style="cursor: pointer" @click="imageClick(index)" />
-          </div>
         </div> -->
       </div>
     </div>
@@ -89,6 +86,51 @@ const images = ref([
     itemImageSrc: 'imgs/photo_7.jpeg',
     thumbnailImageSrc: 'imgs/photo_7.jpeg',
     alt: 'Foto 7'
+  },
+  {
+    itemImageSrc: 'imgs/ensaio/ensaio_01.jpg',
+    thumbnailImageSrc: 'imgs/ensaio/ensaio_01.jpg',
+    alt: 'Ensaio 1'
+  },
+  {
+    itemImageSrc: 'imgs/ensaio/ensaio_02.jpg',
+    thumbnailImageSrc: 'imgs/ensaio/ensaio_02.jpg',
+    alt: 'Ensaio 2'
+  },
+  {
+    itemImageSrc: 'imgs/ensaio/ensaio_03.jpg',
+    thumbnailImageSrc: 'imgs/ensaio/ensaio_03.jpg',
+    alt: 'Ensaio 3'
+  },
+  {
+    itemImageSrc: 'imgs/ensaio/ensaio_04.jpg',
+    thumbnailImageSrc: 'imgs/ensaio/ensaio_04.jpg',
+    alt: 'Ensaio 4'
+  },
+  {
+    itemImageSrc: 'imgs/ensaio/ensaio_05.jpg',
+    thumbnailImageSrc: 'imgs/ensaio/ensaio_05.jpg',
+    alt: 'Ensaio 5'
+  },
+  {
+    itemImageSrc: 'imgs/ensaio/ensaio_06.jpg',
+    thumbnailImageSrc: 'imgs/ensaio/ensaio_06.jpg',
+    alt: 'Ensaio 6'
+  },
+  {
+    itemImageSrc: 'imgs/ensaio/ensaio_07.jpg',
+    thumbnailImageSrc: 'imgs/ensaio/ensaio_07.jpg',
+    alt: 'Ensaio 7'
+  },
+  {
+    itemImageSrc: 'imgs/ensaio/ensaio_08.jpg',
+    thumbnailImageSrc: 'imgs/ensaio/ensaio_08.jpg',
+    alt: 'Ensaio 8'
+  },
+  {
+    itemImageSrc: 'imgs/ensaio/ensaio_09.jpg',
+    thumbnailImageSrc: 'imgs/ensaio/ensaio_09.jpg',
+    alt: 'Ensaio 9'
   }
 ])
 const activeIndex = ref(0)
