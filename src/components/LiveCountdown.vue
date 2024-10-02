@@ -79,7 +79,7 @@ const explode = async () => {
 
 <style lang="scss" scoped>
 .background-countdown {
-  background-color: #e4afaf;
+  background-color: var(--p-primary-300);
 }
 
 .countdown {
@@ -87,7 +87,7 @@ const explode = async () => {
   display: flex;
   column-gap: 0.5rem;
   &-item {
-    background-color: #d4a1a1;
+    background-color: var(--p-primary-400);
     width: 76px;
     height: 76px;
     border-radius: 12px;

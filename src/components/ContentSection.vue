@@ -26,6 +26,6 @@ defineProps<Props>()
   background-color: #fff;
 }
 .background-secondary {
-  background-color: #fff3f4;
+  background-color: var(--p-primary-50);
 }
 </style>

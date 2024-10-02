@@ -8,7 +8,7 @@
         irei. Onde tu repousares, repousarei. Teu Deus será o meu Deus. Teu caminho o meu será.” – Rute 1:16-17
       </p>
       <div class="card flex justify-center">
-        <Galleria
+        <!-- <Galleria
           v-model:activeIndex="activeIndex"
           v-model:visible="displayCustom"
           :value="images"
@@ -26,13 +26,24 @@
           <template #thumbnail="slotProps">
             <img :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" style="display: block" />
           </template>
+        </Galleria> -->
+
+        <Galleria :value="images" :responsiveOptions="responsiveOptions" :numVisible="5" :circular="true" containerStyle="max-width: 640px"
+            :showItemNavigators="true" :showThumbnails="false"
+            :autoPlay="true" :transitionInterval="3000">
+            <template #item="slotProps">
+                <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="width: 100%; display: block;" />
+            </template>
+            <template #thumbnail="slotProps">
+                <img :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" style="display: block;" />
+            </template>
         </Galleria>
 
-        <div v-if="images" class="grid grid-cols-12 gap-4" style="max-width: 400px">
+        <!-- <div v-if="images" class="grid grid-cols-12 gap-4" style="max-width: 400px">
           <div v-for="(image, index) of images" :key="index" class="col-span-6 sm:col-span-4">
             <img :src="image.thumbnailImageSrc" :alt="image.alt" style="cursor: pointer" @click="imageClick(index)" />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </ContentSection>

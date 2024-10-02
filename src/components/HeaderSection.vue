@@ -28,7 +28,7 @@ defineProps<Props>();
 
 <style lang="scss" scoped>
 .header {
-  background-color: #fffafa;
+  background-color: var(--p-primary-100);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ defineProps<Props>();
       color: #5d758d;
       background-color: #fff;
       &::before {
-        background-color: #ffc3c9;
+        background-color: var(--p-primary-300);
         content: '';
         position: absolute;
         top: 8px;
