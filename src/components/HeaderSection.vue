@@ -39,9 +39,9 @@ defineProps<Props>();
     width: 100%;
     min-height: 380px;
     background-size: cover;
-    background-position: center;
+    background-position:  center;
     background-repeat: no-repeat;
-    background-image: url('/imgs/photo_2.jpg');
+    background-image: url('/imgs/ensaio/ensaio_07.jpg');
   }
   .wrapper {
     position: relative;
