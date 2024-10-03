@@ -1,7 +1,7 @@
 <template>
   <HeaderSection />
   <LiveCountdown />
-  <ContentSection variant="primary" title="O casal">
+  <ContentSection id="casal" variant="primary" title="O casal">
     <div class="flex flex-col items-center">
       <p class="mb-5">
         “Deus mudou o teu caminho até juntares com o meu e guardou a tua vida separando-a para mim. Para onde fores,
@@ -26,7 +26,7 @@
       </Galleria>
     </div>
   </ContentSection>
-  <ContentSection variant="secondary" title="Cerimônia">
+  <ContentSection id="cerimonia" variant="secondary" title="Cerimônia">
     <p class="mb-5">
       Gostaríamos muito de contar com a presença de todos vocês no momento em que nossa união será abençoada diante de
       Deus! Contamos com vocês! Dia 21 de dezembro de 2024, às 16:30h. Paróquia Santo Antônio - R. José Epaminondas,
@@ -42,7 +42,7 @@
     >
     </iframe>
   </ContentSection>
-  <ContentSection variant="primary" title="Recepção">
+  <ContentSection id="recepcao" variant="primary" title="Recepção">
     <p class="mb-5">
       Os noivos convidam para recepção na mesma data, após a cerimônia no Espaço Glamour - R. Dom Marcelo Pinto
       Carvalheira, 1239 - Bairro Novo - Guarabira - PB - 58200-000
