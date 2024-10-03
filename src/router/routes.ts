@@ -21,17 +21,6 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/app/CartView.vue')
       }
     ]
-  },
-  {
-    path: '/admin',
-    component: () => import('@/layouts/admin/AdminLayout.vue'),
-    children: [
-      {
-        path: '/admin/lista-presentes',
-        name: 'AdminGiftList',
-        component: () => import('@/views/admin/GiftListView.vue')
-      }
-    ]
   }
 ]
 

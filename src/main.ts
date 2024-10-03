@@ -1,14 +1,12 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
-import App from '@/App.vue'
+import App from './App.vue'
+import PrimeVue from 'primevue/config'
+import WeddingOlive from '@/themes/WeddingOlive'
 import router from '@/router'
 
-import PrimeVue from 'primevue/config'
-import DefaultTheme from '@/themes/default'
-// import StyleClass from 'primevue/styleclass'
-
-import '@/assets/scss/core.scss'
+import '@/assets/css/styles.css'
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -17,7 +15,7 @@ app.use(pinia)
 app.use(router)
 app.use(PrimeVue, {
   theme: {
-    preset: DefaultTheme,
+    preset: WeddingOlive,
     options: {
       darkModeSelector: 'none',
       cssLayer: {
@@ -25,10 +23,7 @@ app.use(PrimeVue, {
         order: 'tailwind-base, primevue, tailwind-utilities'
       }
     }
-  },
-  ripple: true
+  }
 })
-
-// app.directive('styleclass', StyleClass)
 
 app.mount('#app')

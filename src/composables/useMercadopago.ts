@@ -1,9 +1,8 @@
-import {  onMounted } from "vue";
+import { onMounted } from 'vue'
 
-let mercadopago: any;
+let mercadopago: any
 
 export default function useFormatter() {
-  
   onMounted(() => {
     // @ts-ignore
     mercadopago = new MercadoPago(process.env.VITE_MERCADOPAGO_TOKEN)
@@ -21,5 +20,5 @@ export default function useFormatter() {
   return {
     mercadopago,
     openCheckout
-  };
+  }
 }

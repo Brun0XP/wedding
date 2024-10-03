@@ -1,9 +1,9 @@
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const showSidebar = ref();
+const showSidebar = ref()
 
 export default function useLayout() {
   return {
     showSidebar
-  };
+  }
 }

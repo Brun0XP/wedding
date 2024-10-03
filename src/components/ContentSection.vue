@@ -1,9 +1,15 @@
 <template>
-  <div class="py-10 flex flex-col items-center px-4" :class="`background-${variant}`">
+  <div
+    class="py-10 flex flex-col items-center px-4"
+    :class="{
+      'bg-white': variant === 'primary',
+      'bg-primary-50': variant === 'secondary'
+    }"
+  >
     <div
       class="w-[120px] h-[35px]"
       :style="{
-        backgroundImage: `url(/imgs/floral-rose.svg)`
+        backgroundImage: `url(/imgs/graphics/floral-rose.svg)`
       }"
     ></div>
     <h2 v-if="title" class="text-gray-600 uppercase text-xl font-bold my-8">{{ title }}</h2>
@@ -20,12 +26,3 @@ interface Props {
 }
 defineProps<Props>()
 </script>
-
-<style lang="scss" scoped>
-.background-primary {
-  background-color: #fff;
-}
-.background-secondary {
-  background-color: var(--p-primary-50);
-}
-</style>

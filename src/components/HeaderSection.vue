@@ -18,14 +18,6 @@
   </header>
 </template>
 
-<script lang="ts" setup>
-interface Props {
-  variant?: 'primary' | 'secondary';
-  title?: string;
-}
-defineProps<Props>();
-</script>
-
 <style lang="scss" scoped>
 .header {
   background-color: var(--p-primary-100);
@@ -73,7 +65,7 @@ defineProps<Props>();
         z-index: -1;
       }
       &:after {
-        background-image: url('/imgs/floral-topo-rose.svg');
+        background-image: url('/imgs/graphics/floral-topo-rose.svg');
         content: '';
         position: absolute;
         width: 180px;
@@ -88,7 +80,7 @@ defineProps<Props>();
       }
 
       .logo {
-        background-image: url('/imgs/logo-topo-rose.svg');
+        background-image: url('/imgs/graphics/logo-topo-rose.svg');
         position: relative;
         width: 57px;
         height: 57px;
@@ -96,7 +88,7 @@ defineProps<Props>();
         background-position: center;
         background-size: contain;
         span {
-          color: #e4afaf;
+          color: var(--p-primary-300);
           position: absolute;
           top: 25%;
           left: 0;

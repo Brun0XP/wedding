@@ -6,7 +6,7 @@ interface Product {
   id: number
   name: string
   description: string
-  image: string,
+  image: string
   price: number
   quantity: number
   categories: {
@@ -44,8 +44,8 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   const isInCart = (productId: number) => {
-    return items.value.some(item => item.id === productId);
-  };
+    return items.value.some((item) => item.id === productId)
+  }
 
   const incrementQuantity = (productId: number) => {
     const item = items.value.find((item) => item.id === productId)
@@ -62,8 +62,6 @@ export const useCartStore = defineStore('cart', () => {
       removeItem(productId)
     }
   }
-
-  
 
   return {
     items,
