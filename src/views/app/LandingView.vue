@@ -32,12 +32,29 @@
       Deus! Contamos com vocês! Dia 21 de dezembro de 2024, às 16:30h. Paróquia Santo Antônio - R. José Epaminondas,
       Guarabira - PB, 58200-000
     </p>
+    <iframe
+      class="w-full max-w-[40rem] mx-auto aspect-video"
+      style="border: 0"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.3625747447813!2d-35.492349624212096!3d-6.847065966985297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7adb79ca8328511%3A0x42cacae75d4383e4!2sPar%C3%B3quia%20Santo%20Ant%C3%B4nio%2C%20Guarabira%20PB!5e0!3m2!1spt-BR!2sbr!4v1727920161124!5m2!1spt-BR!2sbr"
+    >
+    </iframe>
   </ContentSection>
   <ContentSection variant="primary" title="Recepção">
     <p class="mb-5">
       Os noivos convidam para recepção na mesma data, após a cerimônia no Espaço Glamour - R. Dom Marcelo Pinto
       Carvalheira, 1239 - Bairro Novo - Guarabira - PB - 58200-000
     </p>
+    <iframe
+      class="w-full max-w-[40rem] mx-auto aspect-video"
+      style="border: 0"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.4192148067027!2d-35.50087941579452!3d-6.840240049254797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7adb6bc62e72bfd%3A0x1ab24802165fedca!2sEspa%C3%A7o%20Glamour!5e0!3m2!1spt-BR!2sbr!4v1727920307914!5m2!1spt-BR!2sbr"
+    ></iframe>
   </ContentSection>
 </template>
 

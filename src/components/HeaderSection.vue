@@ -31,7 +31,7 @@
     width: 100%;
     min-height: 380px;
     background-size: cover;
-    background-position:  center;
+    background-position: center;
     background-repeat: no-repeat;
     background-image: url('/imgs/ensaio/ensaio_07.jpg');
   }
@@ -124,7 +124,7 @@
       }
       .web-info {
         i {
-          color: #ffc3c9;
+          color: var(--p-primary-300);
         }
       }
     }
