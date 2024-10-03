@@ -20,6 +20,7 @@
     "primevue": "^4.0.7",
     "tailwindcss-primeui": "^0.3.4",
     "vue": "^3.4.37",
+    "vue-confetti-explosion": "^1.0.2",
     "vue-router": "4"
   },
   "devDependencies": {

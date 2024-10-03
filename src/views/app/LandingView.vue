@@ -1,5 +1,6 @@
 <template>
   <HeaderSection />
+  <LiveCountdown />
   <ContentSection variant="primary" title="O casal">
     <div class="flex flex-col items-center">
       <p class="mb-5">
