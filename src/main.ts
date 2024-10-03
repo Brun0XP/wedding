@@ -1,20 +1,29 @@
 import { createApp } from 'vue'
-import './style.css'
+import { createPinia } from 'pinia'
+
 import App from './App.vue'
-import PrimeVue from 'primevue/config';
-import Aura from '@primevue/themes/aura';
-import Button from "primevue/button"
-import Galleria from "primevue/Galleria"
+import PrimeVue from 'primevue/config'
+import WeddingOlive from '@/themes/WeddingOlive'
+import router from '@/router'
 
+import '@/assets/css/styles.css'
 
-const app = createApp(App);
+const app = createApp(App)
+const pinia = createPinia()
+
+app.use(pinia)
+app.use(router)
 app.use(PrimeVue, {
-    theme: {
-        preset: Aura
+  theme: {
+    preset: WeddingOlive,
+    options: {
+      darkModeSelector: 'none',
+      cssLayer: {
+        name: 'primevue',
+        order: 'tailwind-base, primevue, tailwind-utilities'
+      }
     }
-});
-app.component('Button', Button);
-app.component('Galleria', Galleria);
-
+  }
+})
 
 app.mount('#app')
