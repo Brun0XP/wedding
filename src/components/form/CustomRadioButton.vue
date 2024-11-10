@@ -21,5 +21,5 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const { value, errorMessage } = useField<string>(() => props.name)
+const { value } = useField<string>(() => props.name)
 </script>
