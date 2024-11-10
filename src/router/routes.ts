@@ -11,6 +11,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/app/LandingView.vue')
       },
       {
+        path: '/rsvp',
+        name: 'RSVP',
+        component: () => import('@/views/app/RsvpView.vue')
+      },
+      {
         path: '/lista-presentes',
         name: 'GiftList',
         component: () => import('@/views/app/GiftListView.vue')
