@@ -11,7 +11,6 @@ declare module 'vue' {
     Badge: typeof import('primevue/badge')['default']
     Button: typeof import('primevue/button')['default']
     ContentSection: typeof import('./src/components/ContentSection.vue')['default']
-    copy: typeof import('./src/components/modal/ModalError copy.vue')['default']
     CustomInputText: typeof import('./src/components/form/CustomInputText.vue')['default']
     CustomRadioButton: typeof import('./src/components/form/CustomRadioButton.vue')['default']
     CustomSelect: typeof import('./src/components/form/CustomSelect.vue')['default']
