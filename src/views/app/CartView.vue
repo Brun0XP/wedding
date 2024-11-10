@@ -1,5 +1,5 @@
 <template>
-  <ContentSection variant="primary">
+  <ContentSection variant="secondary" class="flex-grow">
     <div>
       <div>
         <h1 class="text-surface-500 uppercase text-md">PRESENTEAR ANA & BRUNO</h1>

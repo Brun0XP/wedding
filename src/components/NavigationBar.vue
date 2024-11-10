@@ -69,6 +69,13 @@ const items = [
     command: () => {
       goToSection('/', 'recepcao')
     }
+  },
+  {
+    label: 'Confirmar Presença',
+    icon: 'pi pi-check',
+    command: () => {
+      router.push('/rsvp')
+    }
   }
 ]
 

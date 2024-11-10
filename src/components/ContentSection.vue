@@ -13,7 +13,7 @@
       }"
     ></div>
     <h2 v-if="title" class="text-gray-600 uppercase text-xl font-bold my-8">{{ title }}</h2>
-    <div class="max-w-[940px] text-justify" :style="{ marginTop: title ? '0' : '2rem' }">
+    <div class="max-w-[940px] w-full text-justify" :style="{ marginTop: title ? '0' : '2rem' }">
       <slot></slot>
     </div>
   </div>

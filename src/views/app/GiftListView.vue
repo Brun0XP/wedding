@@ -1,5 +1,5 @@
 <template>
-  <ContentSection variant="secondary" title="Lista de presentes">
+  <ContentSection variant="secondary" title="Lista de presentes" class="flex-grow">
     <DataView :value="gifts" layout="grid" data-key="gifts">
       <template #header>
         <div class="flex justify-end">
@@ -96,7 +96,7 @@ const modalAddedCartVisible = ref(false)
 const gifts = ref()
 onMounted(async () => {
   axios.get('/product').then((response) => {
-    gifts.value = response.data
+    gifts.value = response.data.content
   })
 })
 
