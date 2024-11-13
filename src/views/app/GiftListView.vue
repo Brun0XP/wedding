@@ -95,7 +95,7 @@ const modalAddedCartVisible = ref(false)
 
 const gifts = ref()
 onMounted(async () => {
-  axios.get('/product').then((response) => {
+  axios.get('/product?sort=description,asc').then((response) => {
     gifts.value = response.data.content
   })
 })
