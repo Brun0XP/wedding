@@ -12,7 +12,7 @@
       <p class="">
         {{ message }}
       </p>
-      <Button icon="pi pi-home" label="Voltar para tela inicial" @click="$emit('update:visible', false)"></Button>
+      <Button icon="pi pi-home" label="Voltar para tela inicial" @click="onSubmit"></Button>
     </div>
   </Dialog>
 </template>
@@ -24,4 +24,11 @@ interface Props {
   message: string
 }
 defineProps<Props>()
+
+const emits = defineEmits(['update:visible', 'close'])
+
+const onSubmit = () => {
+  emits('update:visible', false)
+  emits('close')
+}
 </script>

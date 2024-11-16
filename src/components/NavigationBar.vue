@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex items-center px-4 h-[4rem] bg-white shadow-5">
+  <nav class="flex items-center h-[4rem] px-4 sm:px-0 bg-white shadow-5 max-w-[940px] w-full mx-auto">
     <Button
       text
       icon="pi pi-bars"
@@ -28,15 +28,31 @@
         <Button :label="item.label" text @click="item.command"></Button>
       </li>
     </ul>
-    <RouterLink class="ml-auto" to="/lista-presentes">
-      <Button label="Presentear" rounded icon="pi pi-gift"></Button>
-    </RouterLink>
+
+    <ButtonGroup class="ml-auto flex">
+      <Button label="Presentear" rounded icon="pi pi-gift" @click="router.push('/lista-presentes')"></Button>
+
+      <Button
+        v-if="cartItemCount > 0"
+        rounded
+        icon="pi pi-shopping-cart"
+        :badge="`${cartItemCount}`"
+        badgeSeverity="primary"
+        outlined
+        @click="router.push('/carrinho')"
+      ></Button>
+    </ButtonGroup>
   </nav>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+
+import { useCartStore } from '@/stores/cart'
+import { storeToRefs } from 'pinia'
+
+const { cartItemCount } = storeToRefs(useCartStore())
 
 const router = useRouter()
 const menu = ref()

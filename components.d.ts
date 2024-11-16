@@ -10,6 +10,7 @@ declare module 'vue' {
     AddedCartModal: typeof import('./src/components/modal/AddedCartModal.vue')['default']
     Badge: typeof import('primevue/badge')['default']
     Button: typeof import('primevue/button')['default']
+    ButtonGroup: typeof import('primevue/buttongroup')['default']
     ContentSection: typeof import('./src/components/ContentSection.vue')['default']
     CustomInputText: typeof import('./src/components/form/CustomInputText.vue')['default']
     CustomRadioButton: typeof import('./src/components/form/CustomRadioButton.vue')['default']

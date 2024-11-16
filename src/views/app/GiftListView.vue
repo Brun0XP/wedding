@@ -2,15 +2,25 @@
   <ContentSection variant="secondary" title="Lista de presentes" class="flex-grow">
     <DataView :value="gifts" layout="grid" data-key="gifts">
       <template #header>
-        <div class="flex justify-end">
-          <RouterLink to="/carrinho">
-            <Button
-              icon="pi pi-shopping-cart"
-              :label="cartItemCount ? `${cartItemCount} item(s) no carrinho` : 'Carrinho vazio'"
-              :disabled="!cartItemCount"
-            ></Button>
-          </RouterLink>
-        </div>
+        <form class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <CustomSelect
+            name="categoryId"
+            label="Filtrar por categoria"
+            :options="categories"
+            optionLabel="name"
+            optionValue="id"
+            @change="onSubmit"
+          />
+          <CustomSelect
+            name="sort"
+            label="Ordenar"
+            class="sm:col-start-3"
+            :options="sortOptions"
+            optionLabel="label"
+            optionValue="value"
+            @change="onSubmit"
+          />
+        </form>
       </template>
       <template #grid="slotProps">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
@@ -81,24 +91,62 @@
 import { ref, onMounted } from 'vue'
 import { useFormatter } from '@/composables'
 import { useCartStore } from '@/stores/cart'
-import { storeToRefs } from 'pinia'
+import { useForm } from 'vee-validate'
+import { object, string, number } from 'yup'
+import { toTypedSchema } from '@vee-validate/yup'
 import axios from '@/plugins/axios'
 
 import ContentSection from '@/components/ContentSection.vue'
 import AddedCartModal from '@/components/modal/AddedCartModal.vue'
 
 const { formatCurrency } = useFormatter()
-const { cartItemCount } = storeToRefs(useCartStore())
 const { addItem, isInCart } = useCartStore()
 
 const modalAddedCartVisible = ref(false)
 
-const gifts = ref()
-onMounted(async () => {
-  axios.get('/product?sort=description,asc').then((response) => {
-    gifts.value = response.data.content
-  })
+const gifts = ref<{}[]>([])
+const currentPageState = ref({ size: 20, number: 0, totalPages: 0 })
+const categories = ref<{ name: string; id: number | null }[]>([])
+const sortOptions = ref([
+  { label: 'A-Z', value: 'description,asc' },
+  { label: 'Z-A', value: 'description,desc' },
+  { label: 'Menor valor', value: 'price,asc' },
+  { label: 'Maior valor', value: 'price,desc' }
+])
+
+const { handleSubmit } = useForm({
+  validationSchema: toTypedSchema(
+    object({
+      categoryId: number(),
+      sort: string().required()
+    })
+  ),
+  initialValues: {
+    categoryId: 0,
+    sort: 'description,asc'
+  }
 })
+
+const onSubmit = handleSubmit((values) => {
+  gifts.value = []
+  if (!values.categoryId) values.categoryId = undefined
+  searchGifts(values)
+})
+
+onMounted(async () => {
+  axios.get('/categories').then((response) => {
+    categories.value = response.data
+    categories.value.unshift({ name: 'Todos', id: 0 })
+  })
+  searchGifts({ sort: 'description,asc' })
+})
+
+const searchGifts = (params: { categoryId?: number | null; page?: number; sort: string }) => {
+  axios.get('/product', { params }).then((response) => {
+    gifts.value = response.data.content
+    currentPageState.value = response.data.page
+  })
+}
 
 const addToCart = (gift: any) => {
   addItem(gift)
@@ -111,6 +159,7 @@ const addToCart = (gift: any) => {
   background: transparent;
   border: none;
   padding-right: 0;
+  padding-left: 0;
 }
 .p-dataview-content {
   background: transparent;
