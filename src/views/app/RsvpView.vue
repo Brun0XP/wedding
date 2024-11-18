@@ -3,7 +3,12 @@
     <form @submit="onSubmit" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[700px] mx-auto">
       <CustomInputText name="firstname" label="Nome" placeholder="Digite seu nome" />
       <CustomInputText name="lastname" label="Sobrenome" placeholder="Digite seu sobrenome" />
-      <CustomInputText name="email" label="Email" placeholder="Digite seu email" class="sm:col-span-2" />
+      <CustomInputText
+        name="email"
+        label="Whatsapp / Email"
+        placeholder="Digite seu whatsapp ou email"
+        class="sm:col-span-2"
+      />
       <div class="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <CustomRadioButton name="confirmation" inputValue="true" label="Eu vou estar lá" />
         <CustomRadioButton name="confirmation" inputValue="false" label="Desculpe, não posso ir" />
@@ -60,12 +65,16 @@ const modalAlreadyAnsweredVisible = ref(false)
 const modalSuccessVisible = ref(false)
 const errorMessage = ref('')
 
+const emailOrPhoneRegex = /^(\+?[1-9]\d{1,14}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/
+
 const { handleSubmit, resetForm } = useForm({
   validationSchema: toTypedSchema(
     object({
       firstname: string().required('O nome é obrigatório.'),
       lastname: string().required('O sobrenome é obrigatório.'),
-      email: string().email('Por favor, insira um email válido.').required('O email é obrigatório.'),
+      email: string()
+        .matches(emailOrPhoneRegex, 'Por favor, insira um email ou whatsapp válido.')
+        .required('O email é obrigatório.'),
       confirmation: boolean().required(),
       guestsAmount: number().when('confirmation', {
         is: true,
