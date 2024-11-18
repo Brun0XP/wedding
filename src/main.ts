@@ -4,6 +4,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import PrimeVue from 'primevue/config'
 import DialogService from 'primevue/dialogservice'
+import ToastService from 'primevue/toastservice'
 import WeddingOlive from '@/themes/WeddingOlive'
 import router from '@/router'
 
@@ -27,5 +28,6 @@ app.use(PrimeVue, {
   }
 })
 app.use(DialogService)
+app.use(ToastService)
 
 app.mount('#app')

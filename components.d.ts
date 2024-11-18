@@ -11,6 +11,7 @@ declare module 'vue' {
     Badge: typeof import('primevue/badge')['default']
     Button: typeof import('primevue/button')['default']
     ButtonGroup: typeof import('primevue/buttongroup')['default']
+    Card: typeof import('primevue/card')['default']
     ContentSection: typeof import('./src/components/ContentSection.vue')['default']
     CustomInputText: typeof import('./src/components/form/CustomInputText.vue')['default']
     CustomRadioButton: typeof import('./src/components/form/CustomRadioButton.vue')['default']
@@ -21,6 +22,8 @@ declare module 'vue' {
     DynamicDialog: typeof import('primevue/dynamicdialog')['default']
     Galleria: typeof import('primevue/galleria')['default']
     HeaderSection: typeof import('./src/components/HeaderSection.vue')['default']
+    IconField: typeof import('primevue/iconfield')['default']
+    InputIcon: typeof import('primevue/inputicon')['default']
     InputText: typeof import('primevue/inputtext')['default']
     LiveCountdown: typeof import('./src/components/LiveCountdown.vue')['default']
     Menu: typeof import('primevue/menu')['default']
@@ -35,6 +38,7 @@ declare module 'vue' {
     Select: typeof import('primevue/select')['default']
     Skeleton: typeof import('primevue/skeleton')['default']
     Textarea: typeof import('primevue/textarea')['default']
+    Toast: typeof import('primevue/toast')['default']
   }
   export interface ComponentCustomProperties {
     Ripple: typeof import('primevue/ripple')['default']
