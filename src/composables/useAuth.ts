@@ -13,7 +13,7 @@ interface User {
 }
 
 interface LoginRequestBody {
-  email: string
+  login: string
   password: string
 }
 
@@ -25,26 +25,30 @@ export default function () {
   const toast = useToast()
 
   const login = (body: LoginRequestBody) => {
-    axios.post('auth/login', body).then((response) => {
-      if (response.status === 401) {
+    axios
+      .post('login', body)
+      .then((response) => {
+        accessToken.value = response.data.token
+        fetchUser()
+        router.push('/')
         toast.add({
-          severity: 'error',
-          summary: 'Falha ao realizar login',
-          detail: 'Usuário ou senha invalidos!',
+          severity: 'success',
+          summary: 'Sucesso!',
+          detail: 'Login realizado com sucesso!',
           life: 6000
         })
-        return
-      }
-      accessToken.value = response.data.token
-      fetchUser()
-      router.push('/')
-      toast.add({
-        severity: 'success',
-        summary: 'Sucesso!',
-        detail: 'Login realizado com sucesso!',
-        life: 6000
       })
-    })
+      .catch((error) => {
+        if (error.response.status === 403) {
+          toast.add({
+            severity: 'error',
+            summary: 'Falha ao realizar login',
+            detail: 'Usuário ou senha invalidos!',
+            life: 6000
+          })
+          return
+        }
+      })
   }
 
   const logout = () => {
@@ -54,7 +58,7 @@ export default function () {
 
   const fetchUser = () => {
     if (!accessToken.value) return
-    axios.get('auth/session').then((response) => {
+    axios.get('login/session').then((response) => {
       user.value = response.data
     })
   }

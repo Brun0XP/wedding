@@ -42,17 +42,21 @@
         @click="router.push('/carrinho')"
       ></Button>
     </ButtonGroup>
+    {{ user }}
+    <Button v-if="user" class="ml-1" rounded icon="pi pi-sign-out" outlined @click="logout"></Button>
   </nav>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useAuth } from '@/composables'
 
 import { useCartStore } from '@/stores/cart'
 import { storeToRefs } from 'pinia'
 
 const { cartItemCount } = storeToRefs(useCartStore())
+const { user, logout } = useAuth()
 
 const router = useRouter()
 const menu = ref()

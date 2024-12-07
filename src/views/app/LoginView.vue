@@ -7,7 +7,7 @@
         </template>
         <template #content>
           <div class="flex flex-col gap-4">
-            <CustomInputText name="email" label="E-mail" class="w-full" icon="pi pi-user"></CustomInputText>
+            <CustomInputText name="login" label="E-mail" class="w-full" icon="pi pi-user"></CustomInputText>
             <CustomInputText
               name="password"
               label="Senha"
@@ -38,7 +38,7 @@ const { login } = useAuth()
 const { handleSubmit } = useForm({
   validationSchema: toTypedSchema(
     object({
-      email: string().email('Digite um email válido').required('Digite seu email'),
+      login: string().email('Digite um email válido').required('Digite seu email'),
       password: string().required('Digite sua senha')
     })
   )

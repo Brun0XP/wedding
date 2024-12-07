@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { storeToRefs } from 'pinia'
+import { useAuthStore } from '@/stores'
 
 const api = axios.create({
   baseURL: process.env.VITE_API_URL,
@@ -9,9 +11,9 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token')
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`
+    const { accessToken } = storeToRefs(useAuthStore())
+    if (accessToken.value) {
+      config.headers.Authorization = `Bearer ${accessToken.value}`
     }
     return config
   },

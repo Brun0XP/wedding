@@ -51,7 +51,8 @@
                     class="flex-auto whitespace-nowrap"
                     @click="addToCart(item)"
                   ></Button>
-                  <Button icon="pi pi-heart" outlined></Button>
+                  <Button v-if="user" icon="pi pi-pencil" outlined></Button>
+                  <Button v-else icon="pi pi-heart" outlined></Button>
                 </div>
               </div>
             </div>
@@ -76,7 +77,8 @@
               <Skeleton width="255px" height="32px" class="w-full" />
               <div class="flex gap-2">
                 <Button icon="pi pi-gift" label="Presentear" class="flex-auto whitespace-nowrap" disabled></Button>
-                <Button icon="pi pi-heart" outlined disabled></Button>
+                <Button v-if="user" icon="pi pi-pencil" outlined disabled></Button>
+                <Button v-else icon="pi pi-heart" outlined disabled></Button>
               </div>
             </div>
           </div>
@@ -94,6 +96,7 @@ import { useCartStore } from '@/stores/cart'
 import { useForm } from 'vee-validate'
 import { object, string, number } from 'yup'
 import { toTypedSchema } from '@vee-validate/yup'
+import { useAuth } from '@/composables'
 import axios from '@/plugins/axios'
 
 import ContentSection from '@/components/ContentSection.vue'
@@ -101,6 +104,7 @@ import AddedCartModal from '@/components/modal/AddedCartModal.vue'
 
 const { formatCurrency } = useFormatter()
 const { addItem, isInCart } = useCartStore()
+const { user } = useAuth()
 
 const modalAddedCartVisible = ref(false)
 
